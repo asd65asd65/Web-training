@@ -1,0 +1,76 @@
+<!DOCTYPE html><!--宣告html版本-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!--編碼類型-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--讓其他裝置都能顯示更好-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--使用瀏覽器最新版本-->
+    <title>Page1</title>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-migrate-3.1.0.js"
+        integrity="sha256-oA/lsZCgEPkbv/byAkeXSTEZTsGOPZCrtbyFBHmcGKM="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        type="text/css"
+        href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <style>
+        body{text-align: center; background-color: bisque;}
+        .head{background-color: beige;}
+        .style-1{color: cornflowerblue;}
+        .close{color: darkgray;}
+        .treasury{color: gold; font-size: 2em; cursor: pointer;}
+        table{border-style: solid; border-color: peru; background-color: black; margin-left: auto; margin-right: auto;}
+        .Takelight{color: slategrey;}
+    </style>
+    <script type="text/javascript" src="p1.js"></script>
+</head>
+<body>
+    <div id="p1-div1" class="head">
+        <h1 id="title1" title="游標移到上面會改變顏色" onmouseover="changeStyle()" onmouseout="resetStyle()">游標移到上面會改變顏色</h1>
+        <h2 id="title2" title="游標按下會改變顏色" onmousedown="changeStyle2()" onmouseup="resetStyle2()">游標按下會改變顏色</h2>
+        <button id="btn1">一個歡迎</button>
+    </div>
+    <div id="tabs">
+        <ul>
+            <li><a href="#test1">test1</a></li>
+            <li><a href="#test2">test2</a></li>
+            <li><a href="#test3">test3</a></li>
+        </ul>
+        <div id="test1">
+            <input id="text1" type="text">
+            <button id="btn2">複製文字到下方</button>
+            <div>複製的文字: <span id="p1-div2"></span></div>
+        </div>
+        <div id="test2">
+            <h1>點擊金幣</h1>
+            <h2>
+                <span id="info" class="close">資訊欄</span>
+                <span>點擊數: <span id="count"></span></span>
+            </h2>
+            <table class="treasury">
+                <script>
+                    for (let row = 0; row < 10; row++) {
+                        document.write("<tr>");
+                        for (let column = 0; column < 20; column++) {
+                            document.write("<td>金</td>");
+                        }
+                        document.write("<tr>");
+                    }
+                </script>
+            </table>
+        </div>
+        <div id="test3">
+            <h1>載入JSON檔案</h1>
+            <ul></ul>
+        </div>
+    </div>
+</body>
+</html>
